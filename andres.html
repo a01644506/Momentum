@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilio Bezanilla</title>
+    <style>
+        /* === GLOBAL STYLES === */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        /* === PROFILE HEADER === */
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 90%;
+            margin-bottom: 40px; 
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .photo-frame {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 5px solid #3498db;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* === POST MODULE STYLES === */
+        
+        /* 1. The Container for the post */
+        .post-module {
+            background: white;
+            max-width: 800px;
+            width: 90%;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            padding: 30px;
+            display: flex;       /* This enables side-by-side layout */
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px; /* Space between different posts */
+        }
+
+        /* 2. OPTION: Add this class to flip the image to the right */
+        .image-right {
+            flex-direction: row-reverse; /* This flips the order! */
+            text-align: right;           /* Optional: aligns text to right too */
+        }
+
+        /* 3. The Image Style */
+        .post-image {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0; 
+        }
+
+        /* 4. The Text Style */
+        .post-text {
+            flex-grow: 1; /* Allows text to fill remaining space */
+        }
+
+        .post-text h2 {
+            color: #3498db;
+            margin-top: 0;
+        }
+
+        /* === MOBILE RESPONSIVE === */
+        @media (max-width: 600px) {
+            /* On mobile, we force both standard and reversed modules to stack vertically */
+            .post-module, .post-module.image-right {
+                flex-direction: column;
+                text-align: center; /* Center text on mobile looks better */
+            }
+            
+            .post-image {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Emilio Bezanilla</h1>
+        <div class="photo-frame">
+            <img src="https://i.imgur.com/eZH7o6H.jpeg" alt="Emilio Profile">
+        </div>
+    </div>
+
+
+    <div class="post-module">
+        <img class="post-image" src="https://via.placeholder.com/400x300" alt="Project 1">
+        <div class="post-text">
+            <h2>Project Alpha</h2>
+            <p>
+                This is the standard layout. The image is first in the code, 
+                and the CSS puts it on the left.
+            </p>
+        </div>
+    </div>
+    <div class="post-module image-right">
+        <img class="post-image" src="https://via.placeholder.com/400x300/333" alt="Project 2">
+        <div class="post-text">
+            <h2>Project Beta</h2>
+            <p>
+                For this one, I just added the class <b>image-right</b> to the main div.
+                The computer automatically flips it for me!
+            </p>
+        </div>
+    </div>
+    </body>
+</html>
