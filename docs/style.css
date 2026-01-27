@@ -1,0 +1,119 @@
+/* === style.css === */
+
+/* === GLOBAL STYLES === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    
+    /* Professional Gradient Background */
+    background: linear-gradient(135deg, #1c2329 0%, #2c3e50 100%);
+    color: #333; /* Default text color inside containers */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 100vh; /* Ensures background covers full height */
+}
+
+/* === PROFILE HEADER === */
+.container {
+    text-align: center;
+    background: lightslategrey;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 90%;
+    margin-bottom: 40px; 
+    /* border-top: 5px solid #2b6992; /* Professional accent line */
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.photo-frame {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #2b6992;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* === POST MODULE STYLES === */
+
+/* 1. The Container for the post */
+.post-module {
+    background: lightslategrey;
+    max-width: 800px;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    padding: 30px;
+    display: flex;       /* This enables side-by-side layout */
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 30px; /* Space between different posts */
+}
+
+/* 2. OPTION: Add this class to flip the image to the right */
+.image-right {
+    flex-direction: row-reverse; /* This flips the order! */
+    text-align: right;           /* Optional: aligns text to right too */
+}
+
+/* 3. The Image Style */
+.post-image {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    flex-shrink: 0; 
+}
+
+/* 4. The Text Style */
+.post-text {
+    flex-grow: 1; /* Allows text to fill remaining space */
+}
+
+.post-text h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    border-bottom: 2px solid #2b6992;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+.post-text p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* === MOBILE RESPONSIVE === */
+@media (max-width: 600px) {
+    .post-module, .post-module.image-right {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .post-image {
+        width: 100%;
+        height: auto;
+    }
+}
