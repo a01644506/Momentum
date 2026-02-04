@@ -86,6 +86,17 @@ h1 {
     flex-shrink: 0; 
 }
 
+/* SPECIAL RATIO FIX 
+   This replaces the complex calc() logic.
+   It sets the width to a manageable size (350px) but forces the
+   height to respect the 980x873 ratio.
+*/
+.post-image.special-ratio {
+    width: 350px; 
+    aspect-ratio: 980 / 873; /* Calculates exact shape */
+    height: auto; /* Allows aspect-ratio to determine height */
+}
+
 /* 4. The Text Style */
 .post-text {
     flex-grow: 1; /* Allows text to fill remaining space */
@@ -112,7 +123,7 @@ h1 {
         text-align: center;
     }
     
-    .post-image {
+    .post-image, .post-image.special-ratio {
         width: 100%;
         height: auto;
     }
